@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MainFragment">
+  tools:context=".MainFragment"
+  android:padding="@dimen/half_dynamic_spacing">
 
-  <!-- TODO: Update blank fragment layout -->
-  <TextView
+<com.google.android.material.textfield.TextInputLayout
+  android:id="@+id/content_layout"
+  android:layout_width="0dp"
+  android:layout_height="wrap_content"
+  app:hintAnimationEnabled="true"
+  app:hintEnabled="true"
+  app:layout_constraintTop_toTopOf="parent"
+  app:layout_constraintStart_toStartOf="parent"
+  app:layout_constraintEnd_toEndOf="parent"
+  app:layout_constraintBottom_toBottomOf="parent"
+  app:layout_constraintWidth_percent="0.5">
+
+  <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="@string/hello_blank_fragment"/>
+    android:layout_height="wrap_content"
+    android:inputType="textMultiLine"
+    android:minLines="3"
+    android:maxLines="6"
+    android:hint="@string/text_content_hint"/>
 
-</FrameLayout>
+</com.google.android.material.textfield.TextInputLayout>
+
+  <Button
+    android:id="@+id/navigate_b"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    android:text="@string/b_label"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/navigate_c"/>
+
+  <Button
+    android:id="@+id/navigate_c"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    android:text="@string/c_label"
+    app:layout_constraintStart_toEndOf="@id/navigate_b"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/navigate_d"/>
+
+  <Button
+    android:id="@+id/navigate_d"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    android:text="@string/d_label"
+    app:layout_constraintStart_toEndOf="@id/navigate_c"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

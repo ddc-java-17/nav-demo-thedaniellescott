@@ -4,44 +4,66 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/nav_graph"
-  app:startDestination="">
+  app:startDestination="@id/main_fragment">
 
   <fragment
     android:id="@+id/main_fragment"
     android:name="edu.cnm.deepdive.navdemo.MainFragment"
+    android:label="@string/main_fragment_label"
     tools:layout="@layout/fragment_main">
+
     <action
-      android:id="@+id/action_main_fragment_to_child_b_fragment"
-      app:destination="@id/child_b_fragment"/>
+      android:id="@+id/navigate_to_b"
+      app:destination="@id/child_b_fragment">
+
+      <argument
+        android:name="content"
+        app:argType="string"/>
+
+    </action>
+
     <action
-      android:id="@+id/action_main_fragment_to_child_c_fragment"
+      android:id="@+id/navigate_to_c"
       app:destination="@id/child_c_fragment"/>
+
     <action
-      android:id="@+id/action_main_fragment_to_child_d_fragment"
+      android:id="@+id/navigate_to_d"
       app:destination="@id/child_d_fragment"/>
+
   </fragment>
 
   <fragment
     android:id="@+id/child_b_fragment"
     android:name="edu.cnm.deepdive.navdemo.ChildBFragment"
+    android:label="@string/fragment_b_label"
     tools:layout="@layout/fragment_child_b">
+
+    <argument
+      android:name="content"
+      app:argType="string"/>
+
     <action
-      android:id="@+id/action_child_b_fragment_to_child_c_fragment"
+      android:id="@+id/navigate_to_c"
       app:destination="@id/child_c_fragment"/>
+
   </fragment>
 
   <fragment
     android:id="@+id/child_c_fragment"
     android:name="edu.cnm.deepdive.navdemo.ChildCFragment"
+    android:label="@string/fragment_c_label"
     tools:layout="@layout/fragment_child_c"/>
 
   <fragment
     android:id="@+id/child_d_fragment"
     android:name="edu.cnm.deepdive.navdemo.ChildDFragment"
+    android:label="@string/fragment_d_label"
     tools:layout="@layout/fragment_child_d">
     <action
-      android:id="@+id/action_child_d_fragment_to_child_b_fragment"
-      app:destination="@id/child_b_fragment"/>
+      android:id="@+id/navigate_to_c"
+      app:destination="@id/child_c_fragment">
+
+    </action>
   </fragment>
 
 </navigation>

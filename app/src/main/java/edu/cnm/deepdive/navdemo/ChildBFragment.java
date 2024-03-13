@@ -16,6 +16,8 @@ public class ChildBFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     binding = FragmentChildBBinding.inflate(inflater, container, false);
+    String content = ChildBFragmentArgs.fromBundle(getArguments()).getContent();
+    binding.receivedContent.setText(content);
     return binding.getRoot();
   }
 

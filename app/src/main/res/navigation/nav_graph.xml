@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="">
+
+  <fragment
+    android:id="@+id/main_fragment"
+    android:name="edu.cnm.deepdive.navdemo.MainFragment"
+    tools:layout="@layout/fragment_main">
+    <action
+      android:id="@+id/action_main_fragment_to_child_b_fragment"
+      app:destination="@id/child_b_fragment"/>
+    <action
+      android:id="@+id/action_main_fragment_to_child_c_fragment"
+      app:destination="@id/child_c_fragment"/>
+    <action
+      android:id="@+id/action_main_fragment_to_child_d_fragment"
+      app:destination="@id/child_d_fragment"/>
+  </fragment>
+
+  <fragment
+    android:id="@+id/child_b_fragment"
+    android:name="edu.cnm.deepdive.navdemo.ChildBFragment"
+    tools:layout="@layout/fragment_child_b">
+    <action
+      android:id="@+id/action_child_b_fragment_to_child_c_fragment"
+      app:destination="@id/child_c_fragment"/>
+  </fragment>
+
+  <fragment
+    android:id="@+id/child_c_fragment"
+    android:name="edu.cnm.deepdive.navdemo.ChildCFragment"
+    tools:layout="@layout/fragment_child_c"/>
+
+  <fragment
+    android:id="@+id/child_d_fragment"
+    android:name="edu.cnm.deepdive.navdemo.ChildDFragment"
+    tools:layout="@layout/fragment_child_d">
+    <action
+      android:id="@+id/action_child_d_fragment_to_child_b_fragment"
+      app:destination="@id/child_b_fragment"/>
+  </fragment>
+
+</navigation>

@@ -27,6 +27,7 @@
     android:inputType="textMultiLine"
     android:minLines="3"
     android:maxLines="6"
+    android:gravity="top|start"
     android:hint="@string/text_content_hint"/>
 
 </com.google.android.material.textfield.TextInputLayout>

@@ -11,4 +11,5 @@
   <string name="fragment_c_label">Fragment C</string>
   <string name="fragment_d_label">Fragment D</string>
   <string name="shared_content_hint">Shared Content</string>
+  <string name="open_dialogue_label">Dialogue</string>
 </resources>

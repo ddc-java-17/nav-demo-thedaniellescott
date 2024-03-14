@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.navdemo;
+package edu.cnm.deepdive.navdemo.controller;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,29 +11,29 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-import edu.cnm.deepdive.navdemo.databinding.FragmentChildDBinding;
-import org.jetbrains.annotations.NotNull;
+import edu.cnm.deepdive.navdemo.NavGraphDirections;
+import edu.cnm.deepdive.navdemo.databinding.FragmentChildCBinding;
+import edu.cnm.deepdive.navdemo.viewmodel.CommonViewModel;
 
-public class ChildDFragment extends Fragment {
+public class ChildCFragment extends Fragment {
 
-  private FragmentChildDBinding binding;
-  private boolean updatingContent;
+  private FragmentChildCBinding binding;
   private CommonViewModel viewModel;
+  private boolean updatingContent;
 
   @Override
-  public View onCreateView(
-      @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    binding = FragmentChildDBinding.inflate(inflater, container, false);
+  public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+      Bundle savedInstanceState) {
+    binding = FragmentChildCBinding.inflate(inflater, container, false);
     return binding.getRoot();
   }
 
-  @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     binding.content.setSaveEnabled(false);
     binding.content.addTextChangedListener(new ContentWatcher());
-    binding.navigateC.setOnClickListener((v) -> Navigation.findNavController(binding.getRoot())
-        .navigate(ChildDFragmentDirections.navigateToC()));
+    binding.openDialogue.setOnClickListener((button) ->
+        Navigation.findNavController(button).navigate(NavGraphDirections.openDialogue()));
     viewModel = new ViewModelProvider(requireActivity()).get(CommonViewModel.class);
     viewModel
         .getSharedContent()

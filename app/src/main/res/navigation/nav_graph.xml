@@ -6,9 +6,13 @@
   android:id="@+id/nav_graph"
   app:startDestination="@id/main_fragment">
 
+  <action
+    android:id="@+id/open_dialogue"
+    app:destination="@id/simple_dialogue_fragment"/>
+
   <fragment
     android:id="@+id/main_fragment"
-    android:name="edu.cnm.deepdive.navdemo.MainFragment"
+    android:name="edu.cnm.deepdive.navdemo.controller.MainFragment"
     android:label="@string/main_fragment_label"
     tools:layout="@layout/fragment_main">
 
@@ -34,7 +38,7 @@
 
   <fragment
     android:id="@+id/child_b_fragment"
-    android:name="edu.cnm.deepdive.navdemo.ChildBFragment"
+    android:name="edu.cnm.deepdive.navdemo.controller.ChildBFragment"
     android:label="@string/fragment_b_label"
     tools:layout="@layout/fragment_child_b">
 
@@ -50,13 +54,13 @@
 
   <fragment
     android:id="@+id/child_c_fragment"
-    android:name="edu.cnm.deepdive.navdemo.ChildCFragment"
+    android:name="edu.cnm.deepdive.navdemo.controller.ChildCFragment"
     android:label="@string/fragment_c_label"
     tools:layout="@layout/fragment_child_c"/>
 
   <fragment
     android:id="@+id/child_d_fragment"
-    android:name="edu.cnm.deepdive.navdemo.ChildDFragment"
+    android:name="edu.cnm.deepdive.navdemo.controller.ChildDFragment"
     android:label="@string/fragment_d_label"
     tools:layout="@layout/fragment_child_d">
     <action
@@ -65,5 +69,10 @@
 
     </action>
   </fragment>
+
+  <dialog
+    android:id="@+id/simple_dialogue_fragment"
+    android:name="edu.cnm.deepdive.navdemo.controller.SimpleDialogueFragment"/>
+
 
 </navigation>

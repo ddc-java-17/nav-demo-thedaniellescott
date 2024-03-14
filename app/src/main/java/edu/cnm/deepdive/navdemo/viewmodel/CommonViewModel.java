@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.navdemo;
+package edu.cnm.deepdive.navdemo.viewmodel;
 
 import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;

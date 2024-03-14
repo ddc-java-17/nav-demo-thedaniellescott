@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.navdemo;
+package edu.cnm.deepdive.navdemo.controller;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

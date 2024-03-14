@@ -5,7 +5,7 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MainFragment"
+  tools:context=".controller.MainFragment"
   android:padding="@dimen/half_dynamic_spacing">
 
   <com.google.android.material.textfield.TextInputLayout
@@ -30,5 +30,15 @@
       android:hint="@string/shared_content_hint"/>
 
   </com.google.android.material.textfield.TextInputLayout>
+
+  <Button
+    android:id="@+id/open_dialogue"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/open_dialogue_label"
+    android:layout_margin="@dimen/half_dynamic_spacing"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

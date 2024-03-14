@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.navdemo;
+package edu.cnm.deepdive.navdemo.controller;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,15 +19,15 @@ public class MainFragment extends Fragment {
 
   @Override
   public View onCreateView(
-      LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+      @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     binding = FragmentMainBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
     return root;
   }
 
   @Override
-  public void onViewCreated(@NonNull @NotNull View view,
-      @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+  public void onViewCreated(@NonNull View view,
+      @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     NavController navController = Navigation.findNavController(binding.getRoot());
     //noinspection DataFlowIssue
